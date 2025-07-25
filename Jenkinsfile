@@ -12,13 +12,13 @@ pipeline {
                 script {
                     sh '''
                         # Pull Python image
-                        docker pull python:3.8
+                        docker pull python:3.9
                         
                         # Run tests in Docker container
                         docker run --rm \
                             -v ${WORKSPACE}:/workspace \
                             -w /workspace \
-                            python:3.8 bash -c "
+                            python:3.9 bash -c "
                                 pip install --upgrade pip && \
                                 pip install -r requirements.txt && \
                                 pip install pytest pytest-cov pytest-html && \
